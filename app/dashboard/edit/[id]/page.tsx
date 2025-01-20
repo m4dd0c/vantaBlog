@@ -1,4 +1,4 @@
-import { auth } from "@clerk/nextjs";
+import { auth } from "@clerk/nextjs/server";
 import { redirect, notFound } from "next/navigation";
 import EditBlogForm from "@/components/dashboard/edit-blog-form";
 import connectDB from "@/lib/mongodb";
@@ -27,7 +27,7 @@ export default async function EditBlogPage({
 }: {
   params: { id: string };
 }) {
-  const { userId } = auth();
+  const { userId } = await auth();
 
   if (!userId) {
     redirect("/sign-in");

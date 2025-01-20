@@ -1,4 +1,4 @@
-import mongoose from 'mongoose';
+import mongoose from "mongoose";
 
 const BlogSchema = new mongoose.Schema({
   title: {
@@ -18,7 +18,16 @@ const BlogSchema = new mongoose.Schema({
   category: {
     type: String,
     required: true,
-    enum: ['Technology', 'Lifestyle', 'Business', 'Health', 'Travel', 'Food', 'Fashion', 'Sports'],
+    enum: [
+      "Technology",
+      "Lifestyle",
+      "Business",
+      "Health",
+      "Travel",
+      "Food",
+      "Fashion",
+      "Sports",
+    ],
   },
   authorId: {
     type: String,
@@ -42,8 +51,9 @@ const BlogSchema = new mongoose.Schema({
   },
 });
 
-BlogSchema.index({ title: 'text', content: 'text' });
+BlogSchema.index({ title: "text", content: "text" });
 BlogSchema.index({ category: 1 });
 BlogSchema.index({ authorId: 1 });
 
-export default mongoose.models.Blog || mongoose.model('Blog', BlogSchema);
+export default mongoose.models.Blog || mongoose.model("Blog", BlogSchema);
+

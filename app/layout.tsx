@@ -12,10 +12,10 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
-  title: "ModernBlog - Share Your Stories",
+  title: "VantaBlog - Share Your Stories",
   description:
     "A modern blog platform for sharing stories, ideas, and experiences with the world.",
-  keywords: "blog, writing, stories, modern, platform",
+  keywords: "blog, writing, stories, modern, platform, vantaBlog",
 };
 
 export default function RootLayout({

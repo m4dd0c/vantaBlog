@@ -98,6 +98,7 @@ export default function CreateBlogForm() {
         toast.success("Blog post created successfully!");
         router.push(`/blog/${result.blog._id}`);
       } else {
+        console.log(response);
         toast.error("Failed to create blog post");
       }
     } catch (error) {
@@ -206,4 +207,3 @@ export default function CreateBlogForm() {
     </Card>
   );
 }
-

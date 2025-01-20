@@ -47,6 +47,7 @@ export default function BlogList() {
         if (!response.ok) throw new Error("Failed to fetch posts");
 
         const data = await response.json();
+        console.log(data, "is data");
         setPosts(data.blogs || []);
       } catch (err) {
         setError(err instanceof Error ? err.message : "An error occurred");
@@ -123,4 +124,3 @@ export default function BlogList() {
     </div>
   );
 }
-
