@@ -1,8 +1,9 @@
+import { Suspense } from "react";
 import BlogList from "@/components/blog/blog-list";
 import SearchAndFilter from "@/components/blog/search-and-filter";
 
 export const metadata = {
-  title: "Blog - ModernBlog",
+  title: "Blog - VantaBlog",
   description: "Explore all stories and articles on ModernBlog",
 };
 
@@ -16,8 +17,10 @@ export default function BlogPage() {
         </p>
       </div>
 
-      <SearchAndFilter />
-      <BlogList />
+      <Suspense fallback={<h1>Loading...</h1>}>
+        <SearchAndFilter />
+        <BlogList />
+      </Suspense>
     </div>
   );
 }
